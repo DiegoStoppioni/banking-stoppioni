@@ -25,7 +25,7 @@ interface NavItem {
           </svg>
         </div>
         <div class="brand-text">
-          <span class="brand-name">NovaBanca</span>
+          <span class="brand-name">StoppioBank</span>
           <span class="brand-tagline">Home Banking</span>
         </div>
       </div>
@@ -54,9 +54,9 @@ interface NavItem {
 
       <div class="sidebar-footer">
         <div class="user-card">
-          <div class="user-avatar">MB</div>
+          <div class="user-avatar">DS</div>
           <div class="user-info">
-            <span class="user-name">Mario Bianchi</span>
+            <span class="user-name">Diego Stoppioni</span>
             <span class="user-iban">IT60 X054 2811 1010 0000 0123 456</span>
           </div>
         </div>
