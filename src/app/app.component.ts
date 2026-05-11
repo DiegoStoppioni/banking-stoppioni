@@ -18,7 +18,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     .app-layout {
       display: flex;
       min-height: 100vh;
-      background: #f8fafc;
+      background: #c7deff;
     }
 
     .main-content {

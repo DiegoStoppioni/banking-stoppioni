@@ -1,59 +1,65 @@
-# BankingStoppioni
+# 🏦 MiaHomeBanking
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.3.
+**MiaHomeBanking** è una Single Page Application (SPA) sviluppata con **Angular** progettata per la gestione semplificata delle finanze personali. Il sistema permette di monitorare il proprio patrimonio, registrare transazioni e visualizzare conversioni in tempo reale tra valute tradizionali e criptovalute.
 
-## Development server
+---
 
-To start a local development server, run:
+## ✨ Funzionalità
 
-```bash
-ng serve
-```
+### 💰 Gestione Finanziaria
+- **Registrazione Movimenti**: Interfaccia intuitiva per inserire depositi (entrate) e prelievi (uscite).
+- **Calcolo Saldo**: Aggiornamento automatico e dinamico del saldo attuale in base allo storico.
+- **Lista e Storico**: Visualizzazione tabellare di tutti i movimenti effettuati.
+- **Dettaglio Movimento**: Visualizzazione approfondita dei dati per ogni singola operazione.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### 🌍 Integrazioni Exchange
+- **Convertitore Valute Fiat**: Conversione del saldo nelle principali valute mondiali tramite l'API di [Frankfurter](https://frankfurter.app).
+- **Crypto Watch**: Quotazioni in tempo reale e conversione del saldo in asset digitali (BTC, ETH, ecc.) utilizzando le API di [Binance](https://github.io).
 
-## Code scaffolding
+---
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## 🛠️ Tecnologie Utilizzate
 
-```bash
-ng generate component component-name
-```
+- **Core**: [Angular](https://angular.io)
+- **Linguaggio**: TypeScript
+- **HTTP Client**: Per la gestione delle chiamate asincrone alle API esterne
+- **Routing**: Per la navigazione fluida tra lista movimenti e dettagli
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
 
-```bash
-ng generate --help
-```
+## 🚀 Installazione
 
-## Building
+1. **Clona il progetto**
+   ```bash
+   git clone https://github.com
+   ```
 
-To build the project run:
+2. **Entra nella cartella**
+   ```bash
+   cd miahombanking
+   ```
 
-```bash
-ng build
-```
+3. **Installa le dipendenze**
+   ```bash
+   npm install
+   ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+4. **Avvia il server di sviluppo**
+   ```bash
+   ng serve
+   ```
+   L'applicazione sarà disponibile all'indirizzo `http://localhost:4200/`.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 📁 Struttura della Cartella `src/app`
 
-```bash
-ng test
-```
+- `components/`: Contiene i componenti UI (dashboard, lista-movimenti, form-movimento).
+- `services/`: Contiene i servizi per la logica di business e l'integrazione API (FrankfurterService, BinanceService).
+- `models/`: Interfacce per la tipizzazione dei dati (Movimento, Valuta).
 
-## Running end-to-end tests
+---
 
-For end-to-end (e2e) testing, run:
+## 📄 Licenza
 
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Distribuito sotto licenza MIT. Vedi `LICENSE` per maggiori informazioni.
