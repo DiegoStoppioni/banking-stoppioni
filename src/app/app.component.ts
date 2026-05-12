@@ -6,27 +6,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet, SidebarComponent],
-  template: `
-    <div class="app-layout">
-      <app-sidebar />
-      <main class="main-content">
-        <router-outlet />
-      </main>
-    </div>
-  `,
-  styles: [`
-    .app-layout {
-      display: flex;
-      min-height: 100vh;
-      background: #c7deff;
-    }
-
-    .main-content {
-      flex: 1;
-      margin-left: 268px;
-      min-height: 100vh;
-      overflow-y: auto;
-    }
-  `]
+  templateUrl: './app.component.html',
+  styleUrl: './app.component.css',
 })
 export class AppComponent {}
