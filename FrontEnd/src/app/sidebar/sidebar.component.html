@@ -1,0 +1,50 @@
+<aside class="sidebar">
+  <div class="sidebar-header">
+    <div class="brand-logo">
+      <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+        <rect width="32" height="32" rx="10" fill="#2563eb"/>
+        <path d="M8 20V14a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v6" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M6 20h20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <path d="M16 12V9" stroke="white" stroke-width="2" stroke-linecap="round"/>
+        <rect x="13" y="15" width="6" height="5" rx="1" stroke="white" stroke-width="1.5"/>
+      </svg>
+    </div>
+    <div class="brand-text">
+      <span class="brand-name">StoppioBank</span>
+      <span class="brand-tagline">Home Banking</span>
+    </div>
+  </div>
+
+  <div class="sidebar-section-label">Operazioni</div>
+
+  <nav class="sidebar-nav">
+    @for (item of navItems; track item.route) {
+      <a
+        class="nav-item"
+        [routerLink]="item.route"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        [title]="item.description"
+      >
+        <span class="nav-icon" [innerHTML]="item.icon"></span>
+        <span class="nav-label">{{ item.label }}</span>
+        <span class="nav-arrow">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+            <path d="M5.5 3.5L9 7L5.5 10.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </span>
+      </a>
+    }
+  </nav>
+
+  <div class="sidebar-footer">
+    
+    <div class="user-card">
+      <div class="user-avatar">DS</div>
+      <div class="user-info">
+        <span class="user-name">Diego Stoppioni</span>
+        <span class="user-iban">IT60 X054 2811 1010 0000 0123 456</span>
+      </div>
+    </div>
+  </div>
+</aside>

@@ -1,0 +1,37 @@
+<div class="page-container">
+  <h2 class="page-title">Dettaglio Movimento</h2>
+  <p class="page-subtitle">Visualizza le informazioni complete dell'ultima operazione</p>
+
+  <div *ngIf="loading" class="loading-state">Caricamento in corso...</div>
+  <div *ngIf="error" class="error-state">{{ error }}</div>
+
+  <div *ngIf="transaction && !loading" class="detail-card">
+    <div class="detail-header" [ngClass]="transaction.type">
+      <span class="type-badge">{{ transaction.type }}</span>
+      <span class="amount-large">{{ transaction.type === 'deposit' ? '+' : '-' }}{{ transaction.amount | number:'1.2-2' }} $</span>
+    </div>
+
+    <div class="detail-body">
+      <div class="detail-row">
+        <span class="label">ID Transazione</span>
+        <span class="value">#{{ transaction.id }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Data e Ora</span>
+        <span class="value">{{ transaction.created_at | date:'dd MMMM yyyy, HH:mm:ss' }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Descrizione</span>
+        <span class="value">{{ transaction.description || 'Nessuna descrizione fornita' }}</span>
+      </div>
+      <div class="detail-row">
+        <span class="label">Saldo dopo operazione</span>
+        <span class="value">{{ transaction.balance_after | number:'1.2-2' }} $</span>
+      </div>
+    </div>
+  </div>
+
+  <div *ngIf="!transaction && !loading" class="empty-state">
+    Nessun movimento trovato per questo account.
+  </div>
+</div>

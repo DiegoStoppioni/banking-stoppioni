@@ -1,0 +1,73 @@
+.page-container { 
+  padding: 2rem; 
+}
+
+.page-title { 
+  font-size: 1.75rem; 
+  font-weight: 700; 
+  color: var(--text-primary); 
+  margin: 0 0 0.5rem; 
+}
+
+.page-subtitle { 
+  color: var(--text-secondary); 
+  font-size: 1rem; 
+  margin: 0 0 2rem;
+}
+
+
+.saldo-card {
+  width: 100%;               
+  max-width: 380px;          
+  margin: 15% auto;
+  padding: 1.75rem;            
+  box-sizing: border-box;    
+  
+
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05), rgba(255, 255, 255, 0.01));
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 24px; 
+  
+
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12), 
+              0 1px 3px rgba(0, 0, 0, 0.05);
+
+  display: flex;
+  flex-direction: column;    
+  gap: 0.5rem;
+}
+
+
+.saldo-label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+  opacity: 0.8;
+}
+
+
+.saldo-amount-container {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+
+.currency-symbol {
+  font-size: 1.75rem;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+
+.saldo-value {
+  font-size: 2.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+}
