@@ -4,11 +4,11 @@
 
   <div class="form-container">
     <div class="form-group">
-      <label for="amount">Importo</label>
+      <label for="amount" style="color: white;">Importo</label>
       <input type="number" id="amount" [(ngModel)]="amount" placeholder="0.00">
     </div>
     <div class="form-group">
-      <label for="description">Descrizione</label>
+      <label for="description" style="color: white;">Descrizione</label>
       <input type="text" id="description" [(ngModel)]="description" placeholder="Es. Spesa">
     </div>
     <button (click)="onWithdraw()" class="btn-submit">Preleva</button>
