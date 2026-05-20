@@ -1,16 +1,23 @@
 <div class="page-container">
-  <h2 class="page-title">Prelievi</h2>
-  <p class="page-subtitle">Gestisci i tuoi prelievi</p>
+  <div class="bank-card">
+    <div class="bank-card-header">
+      <h2 class="page-title">Prelievi</h2>
+      <p class="page-subtitle">Gestisci i tuoi prelievi</p>
+    </div>
 
-  <div class="form-container">
-    <div class="form-group">
-      <label for="amount" style="color: white;">Importo</label>
-      <input type="number" id="amount" [(ngModel)]="amount" placeholder="0.00">
+    <div class="form-container">
+      <div class="form-group">
+        <label for="amount">Importo</label>
+        <input type="number" id="amount" [(ngModel)]="amount" placeholder="0.00" />
+      </div>
+
+      <div class="form-group">
+        <label for="description">Descrizione</label>
+        <input type="text" id="description" [(ngModel)]="description" placeholder="Es. Spesa" />
+      </div>
+
+      <button (click)="onWithdraw()" class="btn-submit">Preleva</button>
     </div>
-    <div class="form-group">
-      <label for="description" style="color: white;">Descrizione</label>
-      <input type="text" id="description" [(ngModel)]="description" placeholder="Es. Spesa">
-    </div>
-    <button (click)="onWithdraw()" class="btn-submit">Preleva</button>
   </div>
 </div>
+
