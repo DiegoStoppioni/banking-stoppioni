@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class ConvertiCryptoComponent {
   targetCrypto: string = 'BTC';
   conversionResult: any = null;
+  availableCryptos: string[] = ['BTC', 'ETH', 'SOL', 'BNB', 'XRP', 'ADA', 'DOGE', 'DOT'];
 
   constructor(private apiService: ApiService) {}
 

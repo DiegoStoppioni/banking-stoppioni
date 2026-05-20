@@ -8,7 +8,9 @@
     <div class="form-container">
       <div class="form-group">
         <label for="currency">Valuta di destinazione</label>
-        <input type="text" id="currency" [(ngModel)]="targetCurrency" placeholder="EUR, GBP, JPY..." />
+        <select id="currency" [(ngModel)]="targetCurrency">
+          <option *ngFor="let currency of availableCurrencies" [value]="currency">{{ currency }}</option>
+        </select>
       </div>
       <button (click)="onConvert()" class="btn-submit">Converti</button>
     </div>

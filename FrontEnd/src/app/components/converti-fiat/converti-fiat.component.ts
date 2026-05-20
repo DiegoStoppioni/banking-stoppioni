@@ -13,6 +13,7 @@ import { CommonModule } from '@angular/common';
 export class ConvertiFiatComponent {
   targetCurrency: string = 'EUR';
   conversionResult: any = null;
+  availableCurrencies: string[] = ['EUR', 'USD', 'GBP', 'JPY', 'CHF', 'CAD', 'AUD', 'CNY'];
 
   constructor(private apiService: ApiService) {}
 
