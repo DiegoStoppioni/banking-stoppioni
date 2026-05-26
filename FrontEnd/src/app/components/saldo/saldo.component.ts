@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, ChangeDetectorRef } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { Router, NavigationEnd } from '@angular/router';
@@ -15,7 +15,7 @@ export class SaldoComponent implements OnInit, OnDestroy {
   balance: number = 0;
   private routerSubscription?: Subscription;
 
-  constructor(private apiService: ApiService, private router: Router) {
+  constructor(private apiService: ApiService, private router: Router, private cdr: ChangeDetectorRef) {
     this.routerSubscription = this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
     ).subscribe(() => {
@@ -42,9 +42,11 @@ export class SaldoComponent implements OnInit, OnDestroy {
         } else {
           this.balance = 0;
         }
+        this.cdr.detectChanges();
       },
       error: (err) => {
         console.error('Error loading balance', err);
+        this.cdr.detectChanges();
       }
     });
   }

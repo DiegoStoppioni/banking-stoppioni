@@ -9,7 +9,7 @@
     <div *ngFor="let transaction of transactions" class="detail-card">
       <div class="detail-header" [ngClass]="transaction.type">
         <span class="type-badge">{{ transaction.type }}</span>
-        <span class="amount-large">{{ transaction.type === 'deposit' ? '+' : '-' }}{{ transaction.amount | number:'1.2-2' }} $</span>
+        <span class="amount-large">{{ transaction.type === 'deposit' ? '+' : '-' }}{{ transaction.amount | number:'1.2-2' }} €</span>
       </div>
 
       <div class="detail-body">
@@ -27,7 +27,7 @@
         </div>
         <div class="detail-row">
           <span class="label">Saldo dopo operazione</span>
-          <span class="value">{{ transaction.balance_after | number:'1.2-2' }} $</span>
+          <span class="value">{{ transaction.balance_after | number:'1.2-2' }} €</span>
         </div>
       </div>
     </div>

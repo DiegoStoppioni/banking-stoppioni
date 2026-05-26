@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -15,7 +15,7 @@ export class DettaglioMovimentoComponent implements OnInit {
   loading: boolean = false;
   error: string = '';
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
     this.loadTransactions();
@@ -28,10 +28,12 @@ export class DettaglioMovimentoComponent implements OnInit {
       next: (list) => {
         this.transactions = list || [];
         this.loading = false;
+        this.cdr.detectChanges();
       },
       error: (err) => {
         this.error = 'Impossibile caricare i movimenti';
         this.loading = false;
+        this.cdr.detectChanges();
       }
     });
   }

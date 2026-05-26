@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -15,15 +15,17 @@ export class ConvertiCryptoComponent {
   conversionResult: any = null;
   availableCryptos: string[] = ['BTC', 'ETH', 'SOL', 'BNB', 'XRP', 'ADA', 'DOGE', 'DOT'];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private cdr: ChangeDetectorRef) {}
 
   onConvert(): void {
     this.apiService.convertToCrypto(this.targetCrypto).subscribe({
       next: (res) => {
         this.conversionResult = res;
+        this.cdr.detectChanges();
       },
       error: (err) => {
         alert('Errore durante la conversione: ' + (err.error?.error || err.message));
+        this.cdr.detectChanges();
       }
     });
   }

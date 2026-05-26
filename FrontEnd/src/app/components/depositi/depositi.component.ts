@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -14,7 +14,7 @@ export class DepositiComponent {
   amount: number = 0;
   description: string = '';
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private cdr: ChangeDetectorRef) {}
 
   onDeposit(): void {
     if (this.amount <= 0) {
@@ -27,9 +27,11 @@ export class DepositiComponent {
         alert('Deposito effettuato con successo! Nuovo saldo: ' + res.balance);
         this.amount = 0;
         this.description = '';
+        this.cdr.detectChanges();
       },
       error: (err) => {
         alert('Errore durante il deposito: ' + (err.error?.error || err.message));
+        this.cdr.detectChanges();
       }
     });
   }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ChangeDetectorRef } from '@angular/core';
 import { ApiService } from '../../services/api.service';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
@@ -11,19 +11,21 @@ import { CommonModule } from '@angular/common';
   styleUrl: './converti-fiat.component.css',
 })
 export class ConvertiFiatComponent {
-  targetCurrency: string = 'EUR';
+  targetCurrency: string = 'USD';
   conversionResult: any = null;
-  availableCurrencies: string[] = ['EUR', 'USD', 'GBP', 'JPY', 'CHF', 'CAD', 'AUD', 'CNY'];
+  availableCurrencies: string[] = ['USD', 'GBP', 'JPY', 'CHF', 'CAD', 'AUD', 'CNY'];
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private cdr: ChangeDetectorRef) {}
 
   onConvert(): void {
     this.apiService.convertToFiat(this.targetCurrency).subscribe({
       next: (res) => {
         this.conversionResult = res;
+        this.cdr.detectChanges();
       },
       error: (err) => {
         alert('Errore durante la conversione: ' + (err.error?.error || err.message));
+        this.cdr.detectChanges();
       }
     });
   }

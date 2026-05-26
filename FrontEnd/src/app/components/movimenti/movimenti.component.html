@@ -22,12 +22,12 @@
             <polyline points="17 18 23 18 23 12"></polyline>
           </svg>
         </div>
-        
+
         <div class="movement-details">
           <div class="top-row">
             <span class="movement-title">{{ t.description || (t.type === 'deposit' ? 'Deposito' : 'Prelievo') }}</span>
             <span class="movement-amount" [ngClass]="t.type">
-              {{ t.type === 'deposit' ? '+' : '-' }}{{ t.amount | number:'1.2-2' }} $
+              {{ t.type === 'deposit' ? '+' : '-' }}{{ t.amount | number:'1.2-2' }} €
             </span>
           </div>
           <div class="bottom-row">
