@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private apiUrl = 'http://localhost:8085/accounts';//http://localhost:4200';
+  private apiUrl = 'http://localhost:80/accounts';//http://localhost:4200';
   private accountId = 1; // Default account for now
 
   constructor(private http: HttpClient) {}
